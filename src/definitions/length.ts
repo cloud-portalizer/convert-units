@@ -2,7 +2,7 @@ import { Measure, Unit } from './../index';
 export type LengthUnits = LengthMetricUnits | LengthImperialUnits;
 export type LengthSystems = 'metric' | 'imperial';
 
-export type LengthMetricUnits = 'nm' | 'μm' | 'mm' | 'cm' | 'm' | 'km';
+export type LengthMetricUnits = 'nm' | 'μm' | 'mm' | 'cm' | 'm' | 'km' | 'px';
 export type LengthImperialUnits =
   | 'in'
   | 'yd'
@@ -54,6 +54,13 @@ const metric: Record<LengthMetricUnits, Unit> = {
       plural: 'Kilometers',
     },
     to_anchor: 1e3,
+  },
+  px: {
+    name: {
+      singular: 'Pixel',
+      plural: 'Pixels',
+    },
+    to_anchor: 0.0254 / 96,
   },
 };
 
